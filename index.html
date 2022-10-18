@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link href="npm i bootstrap-icons">
+  <Link href="style.css">
+  <title>Document</title>
+</head>
+<body>
+  <table style="width:100%" id="cigarou">
+    <tr>
+      <th>Produit</th>
+      <th>Prix</th>
+      <th>Quantité</th>
+      <th>Total</th>
+      <th>Button</th>
+      <th>Delete</th>
+    </tr>
+    <tr>
+      <td> <img src="https://www.slate.fr/sites/default/files/styles/1200x680/public/ecsta.jpg" width="200"></td>
+      <td class="value">20</td>
+      <td class="value">
+        <button type="button" class="btn btn-primary plus">+</button>
+        <h1 class="count">0</h1>
+        <button type="button" class="btn btn-warning minus">-</button>
+      </td>
+      <td>0</td>
+      <td><i class="bi bi-hand-thumbs-up"></i></td>
+      <td><button type="button" onclick="deleteRow(this)" class="btn btn-danger">Delete</button></td>
+    </tr>
+    <tr>
+      <td> <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBYWFRgWFRYYGRgaGhgeGRgZGhofHB0YGhwcGRwcGhocIS4mHh8rHxkaJjgmLjQxNTU1HiQ7QDs0Py40NTEBDAwMEA8QHhISHzQrJCsxNDQ0PzQ0NDQ2NDQ0NDQ0NDQ0NDQ0NDQ2NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NP/AABEIAKgBLAMBIgACEQEDEQH/xAAcAAEAAQUBAQAAAAAAAAAAAAAABAIDBQYHAQj/xAA8EAABAwIEAwUGBQMEAgMAAAABAAIRAyEEEjFBBVFhBiJxgZEHEzKhsfBCUsHR4WJy8RQzgrKSohYjQ//EABgBAQEBAQEAAAAAAAAAAAAAAAACAQME/8QAIREBAQACAgMBAQEBAQAAAAAAAAECEQMhEjFRE0Gx8TL/2gAMAwEAAhEDEQA/AOzIiICIiAiIgIiICIiAiIgIiICIiDxEVk4lmbLmbm/LIn0WWyexfReL1aCIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiDxEWF7R8RNKnDTD3yGnlzceQAU55TGW1uONyuoidoeOlncokF8SSIJAmDA3Nlzg9oKtR7hULhlIBc4CXO2FmgOs2baDdZIvY/PlIcYl7oMQGwPEWNt5K1vE0KtR+VjwASQ2zWzmF2kwJ0/eV4LleXdv8Ax7scZx6kZYdta9B4GSoWOIDXz3ZOoIggwZ62XR+yfaRuMoh9mvBLXMJvLYkgGDF1yLDYesGuY5jHAAXDyC4iNRJDjA1mx0nRV0arcwgFjgA7JJ00DpFjounHl4+v9RyYTL3/AI70CvVyLgXHK9B7ctYupZhnpvl9pvkdq0x4hdI4dxujWOVjjMTBEW8dJuLar048svV6rz5cdx7/AIyyIi6OYiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiDxEWj8Z7Rg1n0PeBuUluWYJ2ufKfNRllMZ2rHG5XpvCLQm4+q3R7wNhJ+hV4cYr/AJz6N/ZT+s+L/K/W7rSu3mGL3MzOIplpzgCT3TMAC8ukDyVH/wAoqN1ewxzDf0WCxeMfXqOc9xHeEAWGUSA0AbanqYXHm5MbjqOnDx5TLdRsXjg1nu6bQ0aOtJmwien66rB1KpLhle1smDIJE8jyHXlcGFlcbScGiC4tJ+DKCGnmDrPO+gsNVAq04JAzhwMd0aO5EGIO9xf0XHDXi7Zb8mOa10FjRlbN2ky0HV2QgaOOoMkGVKyCRqD1mR0kxPOyF7t3PdzBN9IBO2aIuDB6rx7omG3Fw06Hz29F0nSb2qJhXG4pzTY/fX5qwys1zbCHN+NhIJEyWnSYjoqspIJaDAieQ8fVb1WdxuXZTtaWO93XcSw/C4ych6k3y/RdGY8EAgggiQRoQdCCuBi0an7/AIXQ+wnaJuQYeq6HNMU3O0c06Nk7g2HMRyXbDLXVcc8P7G+ovF6uziIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiClxXEMZUGetiqpklziGxck2aPAT812TiuJFOjUefwscfOLfNcL7UYiGspiAJc6w12bPjqfJefm7sjvw9S1jmcexB7rXkT1iAL2KoHH69i6o59jmY6YjTbWVigLfp/lUlb4xu62nB8cY8BgaGPsAGnunYN7wsel9rhbBi+I+5p/1mYBsY3OU3A2Gi0HhTy1+YfEAS0zcHSR1glTHukyfG65ZcMtdMeTUT8PxVxccxDQYi1iNAxzYII5eflKZIMNc4cg2DA1Nrn9RFlg3N5hTmYprgBULpOjuoiDNrrcsZJ1GY5W1PLpnK5jwJBeyxPIuZbbcWVIN5tzA28lDrVCTmbUYXtsxwa2Yme8BrNr2iOikivIBzMe4iXZLAOvIIERppzUz02vHMEzHe0mNrkyVGqV67HB1M9wEE2FjodQRcWU1tZoAMEm8ta8AkbAtEFt+diAqHMJOZjnW2B2gHvN/U2kWW7NPcxInn/ncqqm6CHXkHUc/HZWhtERubyOkT+nWV6076ev6BaOvdkON/6ikQ6c9OA6byDOV07zBHiCtiWgezKkT/qKh0ljARoS0FxOmwc1b+vRx23GbeXOSZXT1ERWkREQEREBERAREQEREBERAREQEREBEVitiGsjM9rcxhuYgSQCSBOpgE+SC8ixWI49RZPeLiPyiQfA6LDYrtO8/A0NHM3P7KLnIqYZVke2eGNTB1mtMHKHeTSHO/8AUFcT45TblDi6IBAmfLTwW/8AEOIF8uqOmxBJ2G8RoFzHjmJDw3I7MBIJGhIj1XDK+WUrvjPHGxjW1IuI8xPyVrN1VGZUuPiuqNsjwx4zO5kAD1k/RTiFr2eLjbRZjAYoPAE96Lg26T6qb122d9JA5KzWecx2Gmgj7mVLc1rdXSIsevmoOJfM9bD7+9VFyldJLFD8QcsZiJJNuf8AgaLxlU6Zg2fxX87AFRxEkeGv8dFVAg9NFmjbOUOIgjvy0gQ1xbEja0TPjdQ38aAeMoI/qBh3ORHhpoVh3VCGwTN5v6KO+pIVTFNybpRqteCWuB10Pyjmqqb3iW5wWG7mO2j8TdItrzWkUapbdpII3BhbLwnHPrRTfHeLWSLEh5DdfNZcWzJ3jsdwz/T4VjD8Tpe/+5/ejyEDyWdVukGgANiAABHIK6vTJqaea93YiItYIiICIiAiIgIiICIiAiIgIiIPFZxFdrGlziA1oJJOgAV5c59o3HS1ww7W5g0NdUvu6crY/FYEkdQozy8cdqwx8stLmO7dkk+7ADLgOPxWN9dTvAHqsXU48Khlznu5EyQDuDsIWqZ3uzRAFrESRJJsCI1i8DTVVSRaCIFpt4iLW3MW9F4bnlfde6ceE9RsLOMUy5zZIgkAwSHRuMs891J9+x1mvB1tpoYNlqDcQQYBMXsIi4353/VSMFiHgl5ktYJgEwSTaQNtdk8so3xjYsQwkELSONcJe50sfAk2k73OhXuI4rWDnObUdlncmASPhvoeQWVwGKc5svaHAgBrTBJJiHEhttd+i6eVnbn4y9NObwaqCdDIgTm+SpPB63MLfmspuE5gDAs4wLdRbpqrADHD4m7RtbpOt/1V/pU/nGkVuHVB8LhH9RvPkFYNOtmkbAAcoC3h+EabtIM6RB010CxGKombBwgXzRlJ6AHX91UzTcWIYagEOjyKtPqkGDIUk0CCT6+PgvMSO4Q7rFrz0MLZIy2odSryVs4g+ij+7fpB+aqGFcVXjE7qovtJIv1v6DRR85UocMfyUilwd52W+WMZrKscSslwWq4Pa7YbddlJpcAcd48ZWa4ZwAzz8ipueKpjWfwHEn7OI8CQVsOG43XbpUd6z9ZWHwWBAEfQKc1gC57+L19Z6h2mrjUh3i0fpCm0u1bx8dNp8CR9ZWvMflG/30R77SPSQs88p/Twxv8AG20+1VM6sePCD+oU2jx6g78cf3Aj5xC5+8/cqjMfsqpy5JvFi6lSxDHfC9rvAg/RXVyV1ctvMcj/ACrzO1tWk3M17nAfhdcHxLtPJXOX7E3h+V1VFE4Zive0mVIjM0Ejkdx6ypa7OIiIgIiICIiAiIg8XNfaBgw2uH3/APsbOmrmANyg84A9V0pa3254Z7/Cvy/GzvN8tR6X8guXLj5YunFl45OTms0QXS2L5ng+N5HUCNVae8uzOJc6YjuOBA8xJlVYmsXCHjvAd0xoYsd7zusdS4s8Eh9iBpHK3ddyXimO+49tykT6eFL7kOA178A/Iq1iqgHcZoDykEnpyAkT49FHxDR/uFxcyCSx0mJOtjrrqqn4Z72dxsAQQSYkaSYF7Rqt132bV0mvc03APXU6azIOgHRWqFdzwWjKCNBcXNjrEgwIVnEksZlcQNtY05Ab6XULCVTMfFrB5+PXRXMdzaLe9MlXa8fF4gGLwSAL3Eq17qGw5hdBuGEkhsAwYvF/2Ug1g53eFiZAIty0O1tp2XmKqFstGzgQ4CQTNpj9Fk2I9eXy6lPJwLiL7NsNdzKitqVWA2c7mRMA3k2OvkshXxDXObkPdAi0G5NwOd/RRamIfnjOIOubujoD5/cKomvG1S6ARlN7WInW5uT6q4+nmgjIb35dY5+KZtBIJ1MHS2thB0+ii1XxGTltHenURyWwqRgshJa5uV19ja+83voshSp0ASC5oIiwDokx+6xeGa4kgOMxe0eA12ueXJVsrFhzNFyY31H18UpGy0OGAXIBsbRoItHkpBw7RoBp0ha5w+pUY7MC7QknoJiRvJMR4FZfBceBAzsLhpmYCZI17rtPVTtSXSw9525AHXod1JpU+Znx+9bqinxjDmBmgk3mbHxFt1kKNdjvhe11gYDgbHQxrBTZopNInYbHnb5K/mJ+914B5LyQOq1jwgz1Vtzv8b+qV6lpF+Y38fC6wWL4iTIZvvfTx3WybGUxNfLrbkef7LGYjihuGjUfZ669Fj3S7UnciIH0C9ZTH1+iqY/UXL4uOqFxl19Y5CfCwVjHP71Fn5iC7llZc+cx6Kqm1RsU8OxJYfw02gHxgu/7n0Veoz3Xa+w9QuwdM6jvAeAcf1lbCtX9njT/AKGm534nPIBGjQ4tb42aDPVbQu2PqPPl/wCq9REVMEREBERAREQFQ+Ysq0Qco7W9lsV7x1SjTY9hvkbaOeULSsbSLIbiKFSmQdXNMdYdovotW6lFrhDgCOoXK8UrrOWx85NptbD6bzYGcsXBBsRMa7ryrifxtMWHdmBM7+i7fj+xeCqkl1BrXH8TJYfPLr5rXcb7KKDySzEV2/0n3bm6zplC5/jdr/aacgrVHl0nmVfoNObKIJmc49TYrodf2TVB/t4lh/upkH1Dj9FjMV7PcbSOZjGVINsj2z6Py3S4342Zz61SrUa0hkmNLfFP7RAXtR4BtJ0EbjeQDvKk4/h9ek8+9oVGXnMWOgf8hZY1+J7xOs8tt1HivyhiTDiI1PK8bR6c1cAb+JpA5Ta/LzVDq86G3L+fVHXjTa41naU0zap1QA30IPO1oP8AhWWkmcup5qt7TMXEDW1/JKFEQTfbp10HjstF6k0i8w8zzIjW17aXUkVBIdudZi0C1452VhpdFj8tRG5PKyusptyS8QZtc2tbbn+qmtiRg6djni4IAk3NiV57kBjgJmQSIsBeTv8ALqrdap3GcoB/iCqsM+xMyDBj710WaVtHr1mg5+64TG09bfZVNOtmAsA/UO6TYa3HRSKuGYDmI8RY/YVh7cxmBbmSOULWLmB4jUY+c5LZLjrta89djdZ8cfzD4CCdCDbTr/K1uk/I7vCxnaSDtcKXQguEHQjfkdvMx/CCfVxBddxNtAPrzlWibyqueion1XWTTlbtcaBf6pmVt1xdUZ4vK1q8+oARzkdDr6LHYhwGIa4n4iyfkCPQKv3xcYbJcbAC5PgFuvZvsK57m1cQTNiGAaRpmJ1N+iatTbI6N2boOZhaLXWIY23IRIb5CB5LKKzh2EC5J8VeXaenG+3qIi1giIgIiICIiAiIgIiICIiAiIgocwHULE47szhavx0KbjzLGz6xKzCLNQ20bGezLCPu3PT/ALHmPR0hYPFeyY//AJ4k+D2A/NpH0XVYRTcIqZ1xDGezjHMkgMqAaBj7+YeAsJiuDYijm99RqMH5nMdl0j4hZfRS8hTeKKnJXzTUqHVsm2w8NfqqM7j8Q5iL7wvoXHdn8NVk1KFNxOrsoDv/ACEH5rXsd7NsK7/bdUpa2a4Obfo8E/NReKxc5ZfbjJqEgEQYEGNQNNFeztIgATy+UjzC3rHey+swTRqMqRJhwyOJvylp23C1fG9msVSlz8M+27WhwjxYSpuF+KmUv9RMRUBEtiNidZ/KR0vHRWG05brE+hnlyNlHqvJmRkIJsLddDorTMWR189tlnirySM4MAk6Cxv5+C9pQCAfLWYulNjZlrpMXG/z1/hGuIPIi4/eyDMNfaSqXkD/KsPqZWiIuPX7KowmFqV35KbHPdyGg/uOjQrlRY9qYpTOCcBxGKcCxsM3e6Q3y/N5eq3Ts97PWNh+Jh7tcg+AHr+c+Nui6FhsG1gAAAA0AVTHftFz16a12b7HUsPDozv3e7X/iPwhbZTpAK4Ai6THTnbt6iIqYIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgKhzQVWiDE8Q4Dh63+5SY7q5jSR4EiQtax3s0wj5ytfTJ3Y8/9XSPkt6RTcZWzKxyDHeyqoL0qwdyD2weneb+ywVbsTj2G9EvaJ7zHNcfSQY8l3xIWXCKmdce4H2DrVSHYhrqbLd0/GefRo+fgukcJ4HSoMDabQ0dNSeZOpKzKLZjIy5WqWsAVaIqSIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiD//2Q==" width="200"></td>
+      <td>10</td>
+      <td>
+        <button type="button" class="btn btn-primary plus">+</button>
+        <h1 class="count">0</h1>
+        <button type="button" class="btn btn-warning minus">-</button>
+      </td>
+      <td>0</td>
+      <td><i class="bi bi-hand-thumbs-up"></i></td>
+      <td><button type="button" onclick="deleteRow(this)"  class="btn btn-danger">Delete</button></td>
+    </tr>
+    <tr>
+      <td> <img src="https://i0.wp.com/post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/03/adderall-pills-br-image-credit-neb-4o1-2017-br.jpg?w=1155&h=1528" width="200"></td>
+      <td>60</td>
+      <td>
+        <button type="button" class="btn btn-primary plus">+</button>
+        <h1 class="count">0</h1>
+        <button type="button" class="btn btn-warning minus">-</button>
+      </td>
+      <td>0</td>
+      <td><i class="bi bi-hand-thumbs-up"></i></td>
+      <td><button type="button" onclick="deleteRow(this)" class="btn btn-danger">Delete</button></td>
+    </tr>
+  </table>
+<script src="main.js"></script>
+</body>
+</html>
